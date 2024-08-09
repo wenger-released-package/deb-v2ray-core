@@ -1,0 +1,7 @@
+Package: v2ray-core
+Version: 5.16.1
+Maintainer: Wenger Binning <wengerbinning@gmail.com>
+Architecture: amd64
+Description: A Proxy Tool Service.
+	Project V is a set of network tools that helps you to build your own computer 
+ 	network. It secures your network connections and thus protects your privacy.
