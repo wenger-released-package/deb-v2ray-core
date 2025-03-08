@@ -1,0 +1,15 @@
+
+DEBIAN/control:
+* Package: 
+* Version:
+* Section:
+* Priority:
+* Architecture: {all|amd64}
+* Maintainer: NAME <EMAIL>
+* Descrpition
+
+
+
+
+
+pkg-deb --root-owner-group --build <path>

@@ -1,0 +1,13 @@
+
+/etc/systemd/system/v2ray.service
+/etc/systemd/system/v2ray@.service
+
+/etc/v2ray/config.json
+/etc/v2ray/vpoint_socks_vmess.json
+/etc/v2ray/vpoint_vmess_freedom.json
+
+/usr/bin/v2ray
+
+/usr/share/v2ray/geoip-only-cn-private.dat
+/usr/share/v2ray/geoip.dat
+/usr/share/v2ray/geosite.dat

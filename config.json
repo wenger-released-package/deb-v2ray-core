@@ -1,0 +1,118 @@
+{
+	"log": {
+		"loglevel": "warning"
+	},
+
+	"inbounds": [
+		{
+			"tag": "http-inbound",
+			"listen": "127.0.0.1",
+			"port": 6010,
+			"protocol": "http",
+			"settings": {
+				"timeout": 300,
+				"accounts": [],
+				"allowTransparent": false,
+				"userLevel": 0
+			},
+			"streamSettings": {}
+		},
+		{
+			"tag": "socks-inbound",
+			"listen": "127.0.0.1",
+			"port": 6011,
+			"protocol": "socks",
+			"settings": {
+				"auth": "noauth",
+				"accounts": [],
+				"udp": false,
+				"ip": "127.0.0.1",
+				"userLevel": 0
+			},
+			"streamSettings": {}
+		},
+		{
+			"tag": "vmess-inbound",
+			"listen": "127.0.0.1",
+			"port": 6012,
+			"protocol": "vmess",
+			"settings": {
+				"clients": [
+					{
+						"id": "acbee383-cbeb-d947-c96a-86b807a02e26",
+						"alterId": 0,
+						"level": 0,
+						"email": "vmess.v2ray@example.com"
+					}
+				]
+			},
+			"streamSettings": {
+				"network": "ws",
+				"wsSettings": {
+					"acceptProtocol": false,
+					"path": "/vpn/v2ray/vmess",
+					"headers": {
+						"Host": "example.com"
+					}
+				}
+			}
+		},
+		{
+			"tag": "vless-inbound",
+			"listen": "127.0.0.1",
+			"port": 6013,
+			"protocol": "vless",
+			"settings": {
+				"clients": [
+					{
+						"id": "acbee383-cbeb-d947-c96a-86b807a02e26",
+						"level": 0,
+						"email": "vless.v2ray@example.com"
+					}
+				],
+				"decryption": "none"
+			},
+			"streamSettings": {
+				"network": "ws",
+				"wsSettings": {
+					"acceptProtocol": false,
+					"path": "/vpn/v2ray/vless",
+					"headers": {
+						"Host": "example.com"
+					}
+				}
+			}
+		}
+	],
+
+	"outbounds": [
+		{
+			"tag": "freedom-outbound",
+			"protocol": "freedom",
+			"settings": {}
+		},
+		{
+			"tag": "blackhole-outbound",
+			"protocol": "blackhole",
+			"settings": {
+				"response": {
+					"type": "http"
+				}
+			}
+		}
+	],
+
+	"routing": {
+		"domainStrategy": "IPIfNonMatch",
+		"domainMatcher": "mph",
+		"rules": [
+			{
+				"type": "field",
+				"domains": [
+					"geosite:category-ads-all"
+				],
+				"outboundTag": "blackhole-outbound"
+			}
+		]
+	}
+}
