@@ -60,9 +60,9 @@ install -m 0644 -t $dst/usr/share/v2ray $src/geoip.dat
 install -m 0644 -t $dst/usr/share/v2ray $src/geosite.dat
 install -m 0644 -t $dst/usr/share/v2ray $src/geoip-only-cn-private.dat
 #
-install -m 0755 -d $dst/etc/systemed/system
-install -m 0644 -t $dst/etc/systemed/system $src/systemd/system/v2ray.service
-install -m 0644 -t $dst/etc/systemed/system $src/systemd/system/v2ray@.service
+install -m 0755 -d $dst/etc/systemd/system
+install -m 0644 -t $dst/etc/systemd/system $src/systemd/system/v2ray.service
+install -m 0644 -t $dst/etc/systemd/system $src/systemd/system/v2ray@.service
 #
 install -m 0755 -d $dst/etc/v2ray
 install -m 0644 -t $dst/etc/v2ray $src/config.json
